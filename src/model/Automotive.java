@@ -172,7 +172,8 @@ public class Automotive extends ProxyAutomotive implements Serializable
         } 
         catch (AutoException e) 
         {
-            e.printStackTrace();
+            System.out.println(e);
+            auto = e.fixUnableToFindFile(); // Return a automotive object with default value
         }
     }
     
