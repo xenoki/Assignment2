@@ -11,6 +11,7 @@ public abstract class ProxyAutomotive
     
     // Abstract methods -----------------------------------------------------------------------------
     public abstract void readFile(String fileName);
+    public abstract void print();
     public abstract void modifyModelNameAndPrice(String newModelName, int newBasePrice);
     public abstract void modifyOptionSetName(String optSetName, String newName);
     public abstract void modifyOptionName(String optSetName, String optName, String newName, int newPrice);
