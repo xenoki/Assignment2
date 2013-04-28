@@ -160,6 +160,22 @@ public class Automotive extends ProxyAutomotive implements Serializable
     
     // Overriding ProxyAutomotive abstract methods ----------------------------------------------------
     
+    @Override
+    /**
+    * Build an automotive object from a text file 
+    */
+    public void readFile(String fileName) 
+    {
+        try 
+        {
+            auto = new FileIO(fileName).buildAutoFromFile();
+        } 
+        catch (AutoException e) 
+        {
+            e.printStackTrace();
+        }
+    }
+    
     /**
     * Update the model name and price 
     */
@@ -249,16 +265,4 @@ public class Automotive extends ProxyAutomotive implements Serializable
     {
         matchOptionSet(optSetName).deleteOption(optName);
     }
-
-    @Override
-    public void readFile(String fileName) 
-    {
-        try {
-            auto = new FileIO(fileName).buildAutoFromFile();
-        } catch (AutoException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-    
 }
