@@ -67,7 +67,9 @@ public class OptionSet implements Serializable
     
     public void setOption(int i, String name, int price) 
     {
-        _options.set(i, new Option(name, price));
+        //_options.set(i, new Option(name, price));
+        _options.add(i, new Option(name, price));
+
     }
     
     public void setOption(String name, int price)
