@@ -3,17 +3,12 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import exceptions.AutoException;
-
-import util.FileIO;
-import adapter.ProxyAutomotive;
-
 /** Lab 2
 * This class provide an Automotive object in which you can store, serialize, 
 * and print the model name, base price, and the set of options for a car 
 * configuration.
 */
-public class Automotive extends ProxyAutomotive implements Serializable 
+public class Automotive implements Serializable 
 {
     // Constants --------------------------------------------------------------------------------
     
@@ -87,6 +82,8 @@ public class Automotive extends ProxyAutomotive implements Serializable
         this.price = price;
     }
     
+    
+    
     // Methods -----------------------------------------------------------------------------------
    
     /**
@@ -159,23 +156,6 @@ public class Automotive extends ProxyAutomotive implements Serializable
     }
     
     // Overriding ProxyAutomotive abstract methods ----------------------------------------------------
-    
-    @Override
-    /**
-    * Build an automotive object from a text file 
-    */
-    public void readFile(String fileName) 
-    {
-        try 
-        {
-            auto = new FileIO(fileName).buildAutoFromFile();
-        } 
-        catch (AutoException e) 
-        {
-            System.out.println(e);
-            auto = e.fixUnableToFindFile(); // Return a automotive object with default value
-        }
-    }
     
     /**
     * Update the model name and price 

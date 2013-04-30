@@ -1,5 +1,7 @@
 package adapter;
 import model.Automotive;
+import model.OptionSet;
+import model.OptionSet.Option;
 
 /** 
 * Abstract class ProxyAutomtive, this class will provide the abstract method that will 
@@ -7,12 +9,24 @@ import model.Automotive;
 */
 public abstract class ProxyAutomotive 
 {	
-    protected Automotive auto;
+    // Properties -------------------------------------------------------------------------------
+
+    private Automotive auto;
     
+    // Constructors ------------------------------------------------------------------------------
+
+    public Automotive getAuto() 
+    {
+        return auto;
+    }
+    public void setAuto(Automotive auto) 
+    {
+        this.auto = auto;
+    }
     // Abstract methods -----------------------------------------------------------------------------
     public abstract void readFile(String fileName);
     public abstract void print();
-    public abstract void modifyModelNameAndPrice(String newModelName, int newBasePrice);
-    public abstract void modifyOptionSetName(String optSetName, String newName);
-    public abstract void modifyOptionName(String optSetName, String optName, String newName, int newPrice);
+    public abstract void modifyNameAndPrice(Automotive model);
+    public abstract void modifyOptionSet(Automotive model, OptionSet optSet);
+    public abstract void modifyOption(Automotive model, OptionSet optSet, Option opt);
 }

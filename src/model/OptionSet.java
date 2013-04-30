@@ -293,6 +293,7 @@ public class OptionSet implements Serializable
             _price = price;
         }
         
+       
         // Methods ==========================================================
 
         /** 
