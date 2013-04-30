@@ -1,9 +1,4 @@
 package adapter;
-
-import model.Automotive;
-import model.OptionSet;
-import model.OptionSet.Option;
-
 /**
 * @author hquach
 * API for FileInput
@@ -18,8 +13,4 @@ public interface FileInput
 {   
     public void readFile(String fileName);
     public void print();
-    public void modifyNameAndPrice(Automotive model);
-    public void modifyOptionSet(Automotive model, OptionSet optSet);
-    public void modifyOption(Automotive model, OptionSet optSet, Option opt);
-   
 }

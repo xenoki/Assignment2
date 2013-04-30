@@ -13,6 +13,7 @@ public class Main
        model.readFile("FordZTW.txt");
        model.print(); 
        
+       
        BuildAuto ba = new BuildAuto();
        ba.readFile("FordZTW.txt");
        ba.print();
